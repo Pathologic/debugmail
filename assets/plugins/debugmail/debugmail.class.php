@@ -34,9 +34,10 @@ class Plugin
 
     protected function loadConfig()
     {
-        $filename = MODX_BASE_PATH . 'assets/plugins/debugmail/config.php';
+        $config = str_replace(['\\', '/'], '_', $this->modx->event->params['config']);
+        $filename = MODX_BASE_PATH . 'assets/plugins/debugmail/' . $config . '.php';
         if (is_readable($filename) && ($config = require($filename))) {
-            $this->config = array_merge($this->modx->event->params, $config);
+            $this->config = $config;
         }
     }
 }
