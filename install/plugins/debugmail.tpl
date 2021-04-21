@@ -1,6 +1,6 @@
 //<?php
 /**
- * debugmail
+ * DebugMail
  * 
  * Plugin to debug mail sending
  *
